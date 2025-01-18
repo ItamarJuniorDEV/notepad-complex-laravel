@@ -5,6 +5,6 @@ use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 // auth routes
-Route::get('/login', action: [AuthController::class, 'login']);
+Route::get('/login',  [AuthController::class, 'login']);
 Route::get('/loginSubmit', [AuthController::class, 'loginSubmit']);
-Route::get('/logout', action: [AuthController::class, 'logout']);
+Route::get('/logout', [AuthController::class, 'logout']);

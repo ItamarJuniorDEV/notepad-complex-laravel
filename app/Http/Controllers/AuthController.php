@@ -12,7 +12,7 @@ class AuthController extends Controller
         return view('login');
     }
 
-    public function loginSubmit(request $request)
+    public function loginSubmit(Request $request)
     {
         // form validation
         $request->validate(
@@ -35,17 +35,12 @@ class AuthController extends Controller
         $username = $request->input('text_username');
         $password = $request->input('text_password');
 
-        // test database connection
-        try {
-            \DB::connection()->getPdo();
-            echo 'Banco de dados conectado com sucesso!';
-        } catch (\PDOException $e) {
-            echo 'Banco de dados não conectado!' . $e->getMessage();
-        }
+        echo 'OK!';
     }
 
     public function logout()
     {
         echo 'logout';
     }
+
 }

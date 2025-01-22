@@ -16,9 +16,9 @@ Route::middleware([CheckIsNotLogged::class])->group(function () {
 // Middleware para verificar se o usuário está logado
 Route::middleware([CheckIsLogged::class])->group(function () {
     // Se o usuário estiver logado, cairá em uma das rotas abaixo
-    Route::get('/', [MainController::class, 'index']);
-    Route::get('/newNote', [MainController::class, 'newNote']);
-    Route::get('/logout', [AuthController::class, 'logout']);
+    Route::get('/', [MainController::class, 'index'])->name('home');
+    Route::get('/newNote', [MainController::class, 'newNote'])->name('new');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
 

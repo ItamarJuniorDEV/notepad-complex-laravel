@@ -18,6 +18,13 @@ Route::middleware([CheckIsLogged::class])->group(function () {
     // Se o usuário estiver logado, cairá em uma das rotas abaixo
     Route::get('/', [MainController::class, 'index'])->name('home');
     Route::get('/newNote', [MainController::class, 'newNote'])->name('new');
+
+    // edit note
+    Route::get('/editNote/{id}', [MainController::class, 'editNote'])->name('edit');  
+
+    // delete note
+    Route::get('/deleteNote/{id}', [MainController::class, 'deleteNote'])->name('delete');  
+
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 

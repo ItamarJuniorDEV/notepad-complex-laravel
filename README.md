@@ -1,66 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Notes - Sistema de Gerenciamento de Notas
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<div align="center">
 
-## About Laravel
+![Laravel](https://img.shields.io/badge/Laravel-11-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.2-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+</div>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📋 Sobre o Projeto
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Sistema de gerenciamento de notas desenvolvido em Laravel 11 e PHP 8.2, permitindo que usuários autenticados criem, visualizem, editem e excluam suas próprias notas de forma segura.
 
-## Learning Laravel
+## 🚀 Funcionalidades
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Autenticação e Segurança
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+-   Sistema completo de autenticação de usuários
+-   Proteção contra CSRF
+-   Middleware personalizado para controle de acesso
+-   Logout seguro
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Gerenciamento de Notas
 
-## Laravel Sponsors
+-   Criação de novas notas
+-   Visualização de notas existentes
+-   Edição de notas
+-   Exclusão de notas (soft delete)
+-   Formatação automática de datas
+-   IDs encriptados para maior segurança
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Interface e Usabilidade
 
-### Premium Partners
+-   Layout responsivo e intuitivo
+-   Barra de topo consistente em todas as views
+-   Validação de formulários
+-   Feedback visual de erros
+-   Manutenção de dados preenchidos em caso de erro
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## 🛠 Tecnologias Utilizadas
 
-## Contributing
+-   **Laravel 11** - Framework PHP
+-   **PHP 8.2** - Linguagem de programação
+-   **MySQL** - Sistema de gerenciamento de banco de dados
+-   **Blade** - Engine de templates
+-   **Migration & Seeding** - Versionamento de banco de dados
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## ⚙️ Instalação
 
-## Code of Conduct
+1. Clone o repositório
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    ```bash
+    git clone https://github.com/ItamarJuniorDEV/notepad-complex-laravel
+    ```
 
-## Security Vulnerabilities
+2. Instale as dependências
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+    ```bash
+    composer install
+    ```
 
-## License
+3. Configure o ambiente
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
+
+4. Configure o banco de dados no arquivo `.env`
+
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=seu_banco
+    DB_USERNAME=seu_usuario
+    DB_PASSWORD=sua_senha
+    ```
+
+5. Execute as migrations e seeds
+
+    ```bash
+    php artisan migrate --seed
+    ```
+
+6. Inicie o servidor
+    ```bash
+    php artisan serve
+    ```
+
+## 🎯 Uso
+
+1. Acesse a aplicação através do navegador
+2. Faça login com suas credenciais
+3. Na dashboard, você poderá:
+    - Visualizar todas as suas notas
+    - Criar novas notas
+    - Editar notas existentes
+    - Excluir notas indesejadas
+
+## 🤝 Contribuição
+
+Contribuições são sempre bem-vindas! Para contribuir:
+
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT.
+
+## 📧 Contato
+
+Itamar Junior - [cdajuniorf@gmail.com](mailto:cdajuniorf@gmail.com)
+
+Link do Projeto: [https://github.com/ItamarJuniorDEV/notepad-complex-laravel](https://github.com/ItamarJuniorDEV/notepad-complex-laravel)

@@ -18,7 +18,7 @@ Route::middleware([CheckIsLogged::class])->group(function () {
     // Se o usuário estiver logado, cairá em uma das rotas abaixo
     Route::get('/', [MainController::class, 'index'])->name('home');
     Route::get('/newNote', [MainController::class, 'newNote'])->name('new');
-
+    Route::post('/newNoteSubmit', [MainController::class, 'newNoteSubmit'])->name('newNoteSubmit');
     // edit note
     Route::get('/editNote/{id}', [MainController::class, 'editNote'])->name('edit');  
 

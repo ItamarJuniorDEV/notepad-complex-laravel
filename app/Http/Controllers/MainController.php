@@ -7,6 +7,7 @@ use App\Services\Operations;
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\View\View;
 
 class MainController extends Controller
 {
@@ -22,7 +23,13 @@ class MainController extends Controller
 
     public function newNote()
     {
-        echo "I'm creating a new note.";
+        // show new notes view
+        return view('new_note');
+    }
+
+    public function newNoteSubmit(Request $request)
+    {
+        echo "I'm creating a new note";
     }
 
     public function editNote($id)
